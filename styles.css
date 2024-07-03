@@ -1,0 +1,296 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+
+* {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth; /* Enables smooth scrolling */
+}
+
+body {
+    background-color: #2a201c; /* Set the background color for the entire page */
+}
+
+section {
+    padding: 5rem 9%; /* Increased padding for sections */
+    background-color: #2a201c; /* Background color for each section */
+    color: #fff; /* Text color for each section */
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 9%;
+    z-index: 2;
+    background-color: #2a201c; /* Background color for header */
+}
+
+.header .logo img {
+    height: 6rem;
+    width: 100%;
+}
+
+.header .navbar #close {
+    display: none;
+    position: absolute;
+    top: 4rem;
+    right: 2rem;
+    cursor: pointer;
+    font-size: 3rem;
+    color: #fff;
+}
+
+.header .navbar a {
+    font-size: 2rem;
+    margin-right: 2rem;
+    color: #fff;
+}
+
+.header .navbar a:hover {
+    color: #d3ad7f;
+}
+
+.header #menu {
+    display: none;
+    cursor: pointer;
+    font-size: 2.5rem;
+    color: #fff;
+}
+
+.home {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    background: #2a201c;
+}
+
+.home .content {
+    flex: 1 1 40rem;
+    padding-top: 6.5rem;
+}
+
+.home .content .title {
+    font-size: 6rem;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.home .content .title span {
+    text-transform: uppercase;
+    color: #977e60;
+}
+
+.home .content .description {
+    font-size: 2rem;
+    font-weight: lighter;
+    line-height: 1.8;
+    padding: 1rem 0;
+    color: #fff;
+}
+
+.home .content .btn {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: .9rem 3rem;
+    font-size: 1.7rem;
+    color: #4f3814;
+    background: #d3ad7f;
+    cursor: pointer;
+}
+
+.home .content .btn:hover {
+    letter-spacing: .2rem;
+}
+
+.home .image {
+    flex: 1 1 40rem;
+}
+
+.home .image img {
+    width: 100%;
+}
+
+.about, .menu, .contact {
+    padding: 5rem 0; /* Added padding for better spacing */
+    text-align: center;
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.about-content .text {
+    flex: 1 1 40rem;
+}
+
+.about h2, .menu h2, .contact h2 {
+    font-size: 4rem;
+    color: #d3ad7f;
+    margin-bottom: 2rem;
+}
+
+.about p, .menu p, .contact p {
+    font-size: 1.8rem;
+    color: #f4efef;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.menu-items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.menu-item {
+    background: #efb960;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    text-align: center;
+}
+
+.menu-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.menu-item h3 {
+    font-size: 2rem;
+    margin: 1rem 0;
+}
+
+.menu-item p {
+    font-size: 1.6rem;
+    color: #3a2213;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid #e9e2e2;
+    border-radius: 5px;
+    font-size: 1.6rem;
+}
+
+.contact-form button {
+    padding: 1rem 2rem;
+    font-size: 1.7rem;
+    color: #0a0a0a;
+    background: #d3ad7f;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+.contact-form button:hover {
+    background: #5d442a;
+}
+
+@media (max-width:991px) {
+    html {
+        font-size: 55%;
+    }
+
+    .header {
+        padding: 2rem;
+    }
+
+    section {
+        padding: 2rem;
+    }
+}
+
+@media (max-width:768px) {
+    .header #menu {
+        display: inline-block;
+    }
+
+    .header .navbar {
+        position: fixed;
+        top: 0; 
+        right: -105%;
+        width: 30rem;
+        background: rgba(255, 255,255, 0.2);
+        backdrop-filter: blur(50px);
+        transition: .5s;
+        height: 100%;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        z-index: 1200;
+    }
+
+    .header .navbar.active {
+        right: 0;
+    }
+
+    .header .navbar #close {
+        display: block;
+    }
+
+    .header .navbar a {
+        display: block;
+        margin: 1rem 0;
+        text-align: center;
+        font-size: 3rem;
+    }
+
+    .home .content {
+        padding-top: 9.5rem;
+    }
+
+    .home .image img {
+        width: 368px;
+    }
+
+    .home .content .title {
+        font-size: 4rem;
+    }
+
+    .home .content .description {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width:450px) {
+    html {
+        font-size: 50%;
+    }
+
+    .about-content {
+        flex-direction: column;
+    }
+}
